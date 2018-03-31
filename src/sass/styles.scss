@@ -1,6 +1,5 @@
-.view-stub
-{
-    width: 50%;
+.view-stub {
+    width: 100%;
 }
 
 .view-stub__input-block {
@@ -24,18 +23,36 @@
     margin-left: 10px;
 }
 
+.view-stub__container {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.view-stub__log {
+    width: 600px;
+    background-color: #eee;
+    color: black;
+    padding: 10px 5px;
+    line-height: 28px;
+}
+
 .view-stub__label {
-    width: 483px;
+    position: relative;
+    width: 600px;
     background-color: #ddd;
     color: black;
     padding: 10px 5px;
     line-height: 28px;
 }
 
-.log {
-    width: 483px;
-    background-color: #eee;
-    color: black;
-    padding: 10px 5px;
+.label-button{
+    position: absolute;
+    padding: 3px 15px;
+    background-color: #ffdb4d;
     line-height: 28px;
+    font-size: 13px;
+    border-radius: 3px;
+    border: 1px solid black;
+    margin-right: 10px;
+    right:0;
 }

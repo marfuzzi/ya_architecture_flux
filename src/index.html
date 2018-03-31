@@ -6,15 +6,18 @@
     </head>
     <body>
         <h1>Архитектура приложения</h1>
-        <div class="view-stub">
-            <div class="view-stub__input-block">
-                <input class="view-stub__input"/>
-                <button class="view-stub__apply">Отправить на сервер</button>
+            <div class="view-stub">
+                <div class="view-stub__input-block">
+                    <input class="view-stub__input"/>
+                    <button class="view-stub__apply button_server">Отправить на сервер</button>
+                    <button class="view-stub__apply button_store">Очистить Store</button>
+                    <button class="view-stub__apply button_log">Очистить Log</button>
+                </div>
+                <div class="view-stub__container">
+                    <div class="view-stub__label"></div>
+                    <div class="view-stub__log"></div>
+                </div>
             </div>
-            <p class="view-stub__label"> Здесь появится ответ сервера</p>
-        </div>
-        <div class="log">
-            Сюда можно выносить лог
         </div>
     </body>
 </html>
