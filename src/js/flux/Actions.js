@@ -18,12 +18,15 @@ class Action {
         });
     }
 
-    // deleteData() {
-    //     Log.write('4. Action форматирует данные в нужном формате и отправляет в Dispatcher');
-    //     Dispatcher.dispatch({
-    //         type: 'DELETE_DATA',
-    //     });
-    // }
+    /**
+     * Отправка данных в Dispatcher
+    */
+    deleteData() {
+        Log.write('4. Action форматирует данные в нужном формате и отправляет в Dispatcher');
+        Dispatcher.dispatch({
+            type: 'DELETE_DATA',
+        });
+    }
 };
 
 export default new Action();

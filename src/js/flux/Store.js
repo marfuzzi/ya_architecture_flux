@@ -38,13 +38,15 @@ Dispatcher.register(data => {
             Log.write('6. Store меняет свое состояние');
             store.state = [...store.state, data.content];
             store.emitChange();
+            break;
         }
-        // case 'DELETE_DATA': {
-        //     Log.write('6. Store меняет свое состояние');
-        //     store.state = [];
-        //     store.emitChange();
-        // }
-        break;
+        case 'DELETE_DATA': {
+            Log.write('6. Store меняет свое состояние');
+            store.state = [];
+            store.emitChange();
+            break;
+        }
+        default:break;
     }
 });
 export default store;

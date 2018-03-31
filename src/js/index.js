@@ -19,19 +19,23 @@ class View {
      * Первоначальная инициализация
     */
     initialize(){
-        //навешиваем обработчики
+        // навешиваем обработчики
+        // введение данных от пользователя
         buttonServer.addEventListener('click', () => {
             Log.write('2. Данные введены пользователем');
             this.sendData(input.value);
             input.value = '';
         });
-        // buttonStore.addEventListener('click', () => {
-        //     Log.write('2. Пользователь удаляет Store');
-        //     this.deleteData();
-        // });
+        // удаление данных пользователем
+        buttonStore.addEventListener('click', () => {
+            Log.write('2. Пользователь удаляет Store');
+            this.deleteData();
+        });
+        // удаление логов
         buttonLog.addEventListener('click', () => {
             Log.delete();
         });
+
         // подписываемся на изменение состояния Store
         Store.subscribe(this.onChangeStore);
     }
@@ -45,14 +49,15 @@ class View {
         Action.addData(data);
     };
 
-    // /**
-    //  * Пользовательское действие отправлено в Action
-    //  * @param {String} data
-    // */
-    // deleteData() {
-    //     Log.write('3. Пользовательское действие отправлено в Action');
-    //     Action.deleteData();
-    // };
+    /**
+     * Пользовательское действие отправлено в Action
+     * @param {String} data
+    */
+    deleteData() {
+        Log.write('3. Пользовательское действие отправлено в Action');
+        Action.deleteData();
+    };
+
     /**
      * Состояние store изменено. Срабатывает callback. Происходит перерисовка данных
      * @param {Array} newData
