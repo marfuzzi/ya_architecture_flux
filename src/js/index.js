@@ -18,7 +18,7 @@ class View {
     /**
      * Первоначальная инициализация
     */
-    initialize(){
+    initialize() {
         // навешиваем обработчики
         // введение данных от пользователя
         buttonServer.addEventListener('click', () => {
@@ -45,9 +45,9 @@ class View {
      * @param {String} data
     */
     sendData(data) {
-        Log.write('3. Данные отправлены в Action');
+        Log.write('3. Данные из View отправлены в Action');
         Action.addData(data);
-    };
+    }
 
     /**
      * Пользовательское действие отправлено в Action
@@ -56,7 +56,7 @@ class View {
     deleteData() {
         Log.write('3. Пользовательское действие отправлено в Action');
         Action.deleteData();
-    };
+    }
 
     /**
      * Состояние store изменено. Срабатывает callback. Происходит перерисовка данных

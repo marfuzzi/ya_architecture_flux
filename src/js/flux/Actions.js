@@ -27,6 +27,6 @@ class Action {
             type: 'DELETE_DATA',
         });
     }
-};
+}
 
 export default new Action();
