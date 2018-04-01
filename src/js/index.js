@@ -22,7 +22,7 @@ class View {
         // навешиваем обработчики
         // введение данных от пользователя
         buttonServer.addEventListener('click', () => {
-            Log.write('2. Данные введены пользователем');
+            Log.write('2. Пользователь отправляет данные');
             this.sendData(input.value);
             input.value = '';
         });
@@ -41,12 +41,25 @@ class View {
     }
 
     /**
+     * Проверка на пустые клики
+     * @param {String} data
+     * @return {Boolean}
+    */
+    validateData(data) {
+        return data.length;
+    }
+
+    /**
      * Отправка данных в Action
      * @param {String} data
     */
     sendData(data) {
-        Log.write('3. Данные из View отправлены в Action');
-        Action.addData(data);
+        if (this.validateData(data)) {
+            Log.write('3. Данные из View отправлены в Action');
+            Action.addData(data);
+        } else {
+            Log.write('3. Данные из View не прошли валидацию');
+        }
     }
 
     /**

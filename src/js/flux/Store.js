@@ -21,7 +21,7 @@ class Store extends Observer {
 
     /**
      * Получение актуального состояния Store
-     * @return {Array} data
+     * @returns {Array} data
     */
     getState() {
         Log.write('Получение актуального состояния Store');
