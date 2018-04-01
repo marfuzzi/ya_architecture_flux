@@ -9,7 +9,9 @@
     "build": "webpack --mode production --colors --progress",
     "prestart": "rimraf public && npm install",
     "start": "webpack-dev-server --mode development --hot --colors --progress",
-    "lint": "eslint --ignore-path .gitignore . && csscomb -v src/sass/*.scss"
+    "lint:scripts": "eslint ./",
+    "lint:styles": "csscomb -v src/sass/*.scss",
+    "lint":"npm run lint:scripts && npm run lint:styles"
   },
   "repository": {
     "type": "git",
