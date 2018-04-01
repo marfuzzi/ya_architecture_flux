@@ -4,23 +4,18 @@ import Log from '../Log';
  * @class Dispatcher принимает actions и отправляет их в Store
 */
 class Dispatcher {
+    constructor() {
+        this.callbacks = {};
+        this.id = 1;
+    }
+
     /**
      * Dispatcher регистрирует callback
      * @param {Function} callback
      */
     register(callback) {
         Log.write('1.1. Этап инициализации: Store регистрирует callback в Dispatcher.');
-        this._callback = callback;
-    }
-
-    /**
-     * Dispatcher удаляет callback
-     * @param {Function} callback
-     * @return {Number}
-     */
-    unregister() {
-        Log.write('Callback удален');
-        this._callback = null;
+        this.callbacks[`id_${this.id++}`] = callback;
     }
 
     /**
@@ -30,7 +25,9 @@ class Dispatcher {
      */
     dispatch(data) {
         Log.write('5. Dispatcher отправляет тип действия и данные в Store');
-        this._callback(data);
+        Object.keys(this.callbacks).forEach(id => {
+            this.callbacks[id](data);
+        });
     }
 }
 
