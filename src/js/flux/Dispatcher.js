@@ -20,8 +20,7 @@ class Dispatcher {
 
     /**
      * Dispatcher отправляет действие и данные в Store
-     * @param {Function} callback
-     * @return {Number}
+     * @param {Object} data
      */
     dispatch(data) {
         Log.write('5. Dispatcher отправляет тип действия и данные в Store');

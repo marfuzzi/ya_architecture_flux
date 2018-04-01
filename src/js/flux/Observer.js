@@ -16,6 +16,10 @@ class Observer {
         this.observers.push(fn);
     }
 
+    /**
+     * Отписка от изменений
+     * @param {Function} fn
+    */
     unsubscribe(fn) {
         this.observers = this.observers.filter(subscriber => subscriber !== fn);
     }

@@ -51,7 +51,6 @@ class View {
 
     /**
      * Пользовательское действие отправлено в Action
-     * @param {String} data
     */
     deleteData() {
         Log.write('3. Пользовательское действие отправлено в Action');

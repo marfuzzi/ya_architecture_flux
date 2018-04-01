@@ -14,6 +14,10 @@ class Log {
         div.innerHTML = message;
         logContainer.appendChild(div);
     }
+
+    /**
+     * Удаление логов
+     */
     delete() {
         logContainer.innerHTML ='';
     }

@@ -3,7 +3,6 @@ import Log from '../Log';
 
 /**
  * @class Action - класс преобразует данные для Dispatcher
- * упрощает передачу данных в Dispatcher
 */
 class Action {
     /**
